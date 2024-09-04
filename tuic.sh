@@ -200,7 +200,7 @@ inst_tuv4(){
     fi
     ${PACKAGE_INSTALL} wget curl sudo dnsutils
 
-    wget https://github.com/Felix-zf/Tuic-scripts/main/files/tuic-latest-linux-$(archAffix) -O /usr/local/bin/tuic
+    wget https://gitlab.com/Misaka-blog/tuic-script/-/raw/main/files/tuic-latest-linux-$(archAffix) -O /usr/local/bin/tuic
     if [[ -f "/usr/local/bin/tuic" ]]; then
         chmod +x /usr/local/bin/tuic
     else
@@ -288,7 +288,7 @@ dns:
     - 114.114.114.114
 
 proxies:
-  - name: Felix-tuicV4
+  - name: Misaka-tuicV4
     server: $finaldomain
     port: $port
     type: tuic
@@ -307,20 +307,20 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - Felix-tuicV4
+      - Misaka-tuicV4
       
 rules:
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
 EOF
     
-    url="tuic://$finaldomain:$port?password=$token&alpn=h3&mode=bbr#tuic-felix"
+    url="tuic://$finaldomain:$port?password=$token&alpn=h3&mode=bbr#tuic-misaka"
     echo ${url} > /root/tuic/url.txt
 
     cat << EOF >/etc/systemd/system/tuic.service
 [Unit]
 Description=tuic Service
-Documentation=https://github.com/Felix-zf/tuic-script
+Documentation=https://gitlab.com/Misaka-blog/tuic-script
 After=network.target
 [Service]
 User=root
@@ -367,7 +367,7 @@ inst_tuv5(){
     fi
     ${PACKAGE_INSTALL} wget curl sudo
 
-    wget https://github.com/Felix-zf/Tuic-scripts/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
+    wget https://gitlab.com/Misaka-blog/tuic-script/-/raw/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
     if [[ -f "/usr/local/bin/tuic" ]]; then
         chmod +x /usr/local/bin/tuic
     else
@@ -443,7 +443,7 @@ Sagernet、Nekobox 与 小火箭 配置说明（以下6项必填）：
 }
 EOF
 
-    url="tuic://$uuid:$passwd@$finaldomain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuicv5-felix"
+    url="tuic://$uuid:$passwd@$finaldomain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuicv5-misaka"
     echo ${url} > /root/tuic/url.txt
 
     cat << EOF > /root/tuic/clash-meta.yaml
@@ -463,7 +463,7 @@ dns:
     - 114.114.114.114
 
 proxies:
-  - name: Felix-tuicV5
+  - name: Misaka-tuicV5
     server: $finaldomain
     port: $port
     type: tuic
@@ -483,7 +483,7 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - Felix-tuicV5
+      - Misaka-tuicV5
       
 rules:
   - GEOIP,CN,DIRECT
@@ -493,7 +493,7 @@ EOF
     cat << EOF >/etc/systemd/system/tuic.service
 [Unit]
 Description=tuic Service
-Documentation=https://github.com/Felix/tuic-script
+Documentation=https://gitlab.com/Misaka-blog/tuic-script
 After=network.target
 [Service]
 User=root
@@ -703,13 +703,13 @@ menu() {
     clear
     echo "#############################################################"
     echo -e "#                    ${RED}Tuic 一键安装脚本${PLAIN}                      #"
-    echo -e "# ${GREEN}作者${PLAIN}: 秋名山吃豆腐                                        #"
-    echo -e "# ${GREEN}博客${PLAIN}: https://felix-zf.github.io                          #"
-    echo -e "# ${GREEN}GitHub 项目${PLAIN}: https://github.com/felix-zf                  #"
-    echo -e "# ${GREEN}GitLab 项目${PLAIN}: https://gitlab.com/felix-zf                  #"
-    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/xxxxxx                        #"
-    echo -e "# ${GREEN}Telegram 群组${PLAIN}: https://t.me/xxxxxx                        #"
-    echo -e "# ${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@felix-zf           #"
+    echo -e "# ${GREEN}作者${PLAIN}: MisakaNo の 小破站                                  #"
+    echo -e "# ${GREEN}博客${PLAIN}: https://blog.misaka.cyou                            #"
+    echo -e "# ${GREEN}GitHub 项目${PLAIN}: https://github.com/Misaka-blog               #"
+    echo -e "# ${GREEN}GitLab 项目${PLAIN}: https://gitlab.com/Misaka-blog               #"
+    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/misakanocchannel              #"
+    echo -e "# ${GREEN}Telegram 群组${PLAIN}: https://t.me/misakanoc                     #"
+    echo -e "# ${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@misaka-blog        #"
     echo "#############################################################"
     echo ""
     echo -e " ${GREEN}1.${PLAIN} 安装 Tuic V4"
