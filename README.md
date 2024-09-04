@@ -9,6 +9,6 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/Felix-zf/Tuic-s
 ```
 
 ## 感谢
-- Misaka的教程：https://gitlab.com/Misaka-blog/tuic-script
-- Tuic协议：https://github.com/EAimTY/tuic
 - eaimty的blog：https://www.eaimty.com
+- Tuic协议：https://github.com/EAimTY/tuic
+- Misaka的教程：https://gitlab.com/Misaka-blog/tuic-script
