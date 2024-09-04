@@ -78,7 +78,7 @@ insttuic(){
     fi
     ${PACKAGE_INSTALL} wget curl sudo
 
-    wget https://gitlab.com/Misaka-blog/tuic-script/-/raw/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
+    wget https://github.com/Felix-zf/Tuic-scripts/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
     if [[ -f "/usr/local/bin/tuic" ]]; then
         chmod +x /usr/local/bin/tuic
     else
@@ -243,7 +243,7 @@ dns:
     - 114.114.114.114
 
 proxies:
-  - name: Misaka-tuic
+  - name: Felix-tuic
     server: $domain
     port: $port
     type: tuic
@@ -261,7 +261,7 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - Misaka-tuic
+      - Felix-tuic
       
 rules:
   - GEOIP,CN,DIRECT
@@ -271,7 +271,7 @@ EOF
     cat << EOF >/etc/systemd/system/tuic.service
 [Unit]
 Description=tuic Service
-Documentation=https://gitlab.com/Misaka-blog/tuic-script
+Documentation=https://github.com/Felix/tuic-script
 After=network.target
 [Service]
 User=root
