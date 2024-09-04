@@ -200,7 +200,7 @@ inst_tuv4(){
     fi
     ${PACKAGE_INSTALL} wget curl sudo dnsutils
 
-    wget https://gitlab.com/Misaka-blog/tuic-script/-/raw/main/files/tuic-latest-linux-$(archAffix) -O /usr/local/bin/tuic
+    wget https://github.com/Felix-zf/Tuic-scripts/main/files/tuic-latest-linux-$(archAffix) -O /usr/local/bin/tuic
     if [[ -f "/usr/local/bin/tuic" ]]; then
         chmod +x /usr/local/bin/tuic
     else
@@ -288,7 +288,7 @@ dns:
     - 114.114.114.114
 
 proxies:
-  - name: Misaka-tuicV4
+  - name: Felix-tuicV4
     server: $finaldomain
     port: $port
     type: tuic
@@ -307,20 +307,20 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - Misaka-tuicV4
+      - Felix-tuicV4
       
 rules:
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
 EOF
     
-    url="tuic://$finaldomain:$port?password=$token&alpn=h3&mode=bbr#tuic-misaka"
+    url="tuic://$finaldomain:$port?password=$token&alpn=h3&mode=bbr#tuic-felix"
     echo ${url} > /root/tuic/url.txt
 
     cat << EOF >/etc/systemd/system/tuic.service
 [Unit]
 Description=tuic Service
-Documentation=https://gitlab.com/Misaka-blog/tuic-script
+Documentation=https://github.com/Felix-zf/tuic-script
 After=network.target
 [Service]
 User=root
@@ -367,7 +367,7 @@ inst_tuv5(){
     fi
     ${PACKAGE_INSTALL} wget curl sudo
 
-    wget https://gitlab.com/Misaka-blog/tuic-script/-/raw/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
+    wget https://github.com/Felix-zf/Tuic-scripts/main/files/tuic-server-latest-linux-$(archAffix) -O /usr/local/bin/tuic
     if [[ -f "/usr/local/bin/tuic" ]]; then
         chmod +x /usr/local/bin/tuic
     else
@@ -443,7 +443,7 @@ Sagernet、Nekobox 与 小火箭 配置说明（以下6项必填）：
 }
 EOF
 
-    url="tuic://$uuid:$passwd@$finaldomain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuicv5-misaka"
+    url="tuic://$uuid:$passwd@$finaldomain:$port?congestion_control=bbr&udp_relay_mode=quic&alpn=h3#tuicv5-felix"
     echo ${url} > /root/tuic/url.txt
 
     cat << EOF > /root/tuic/clash-meta.yaml
@@ -463,7 +463,7 @@ dns:
     - 114.114.114.114
 
 proxies:
-  - name: Misaka-tuicV5
+  - name: Felix-tuicV5
     server: $finaldomain
     port: $port
     type: tuic
@@ -483,7 +483,7 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - Misaka-tuicV5
+      - Felix-tuicV5
       
 rules:
   - GEOIP,CN,DIRECT
@@ -493,7 +493,7 @@ EOF
     cat << EOF >/etc/systemd/system/tuic.service
 [Unit]
 Description=tuic Service
-Documentation=https://gitlab.com/Misaka-blog/tuic-script
+Documentation=https://github.com/Felix/tuic-script
 After=network.target
 [Service]
 User=root
