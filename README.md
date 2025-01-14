@@ -6,6 +6,20 @@ Tuic V4 + V5 协议一键部署脚本
 ```shell
 wget -N --no-check-certificate https://raw.githubusercontent.com/Felix-zf/Tuic-scripts/main/tuic.sh && bash tuic.sh
 ```
+📦 Installation:
+
+To install tuic-server using the tuic-installer, run the following command:
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/felix-zf/tuic-scripts/main/tuic-installer.sh)
+```
+💬 Usage:
+
+Once you run the script, you'll be greeted with options if tuic-server is detected:
+```
+Reinstall: Start fresh by removing the current version.
+Modify: Change your port or password settings on-the-fly.
+Uninstall: Cleans up tuic-server and its configurations.
+```
 
 ## 客户端配置
 ***Windows (V2rayN)***
