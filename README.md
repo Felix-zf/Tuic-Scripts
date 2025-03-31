@@ -6,13 +6,13 @@ Tuic V4 + V5 协议一键部署脚本
 📦 Test:
 
 ```shell
-wget -N --no-check-certificate https://raw.githubusercontent.com/Felix-zf/Tuic-scripts/main/tuic.sh && bash tuic.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/Felix-zf/Tuic-Scripts/main/tuic.sh && bash tuic.sh
 ```
 📦 Installation:
 
 To install tuic-server using the tuic-installer, run the following command:
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/felix-zf/tuic-scripts/main/tuic-installer.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/felix-zf/Tuic-Scripts/main/tuic-installer.sh)
 ```
 💬 Usage:
 
