@@ -115,10 +115,10 @@ detect_arch() {
 }
 
 server_arch=$(detect_arch)
-latest_release_version=$(curl -s "https://api.github.com/repos/Felix-zf/tuic/releases/latest" | jq -r ".tag_name")
+latest_release_version=$(curl -s "https://api.github.com/repos/etjec4/tuic/releases/latest" | jq -r ".tag_name")
 
 # Build the download URL based on the latest release version and detected architecture
-download_url="https://github.com/Felix-zf/tuic/releases/download/$latest_release_version/$latest_release_version-$server_arch"
+download_url="https://github.com/etjec4/tuic/releases/download/$latest_release_version/$latest_release_version-$server_arch"
 
 # Download the binary with verbose output
 mkdir -p /root/tuic
