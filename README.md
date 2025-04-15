@@ -8,7 +8,7 @@ Tuic V4 + V5 协议一键部署脚本
 ```shell
 wget -N --no-check-certificate https://raw.githubusercontent.com/Felix-zf/Tuic-Scripts/main/tuic.sh && bash tuic.sh
 ```
-📦 Installation:
+📦 Modify:
 
 To install tuic-server using the tuic-installer, run the following command:
 ```
