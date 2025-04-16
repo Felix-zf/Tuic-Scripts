@@ -35,4 +35,4 @@ Uninstall: Cleans up tuic-server and its configurations.
 ## 感谢
 - eaimty的blog：https://www.eaimty.com
 - Tuic协议：https://github.com/EAimTY/tuic
-- Misaka的项目：https://gitlab.com/Misaka-blog/tuic-script
+
