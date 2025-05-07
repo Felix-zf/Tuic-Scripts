@@ -35,4 +35,5 @@ Uninstall: Cleans up tuic-server and its configurations.
 ## 感谢
 - eaimty的blog：https://www.eaimty.com
 - Tuic协议：https://github.com/EAimTY/tuic
+- deathline94的pj: https://github.com/deathline94/Juicity-Installer
 
